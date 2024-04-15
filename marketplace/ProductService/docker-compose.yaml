@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  postgresdb:
+    image: postgres:latest
+    container_name: productdb_container
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: product
+    ports:
+      - "5438:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  redis:
+    image: "redis:latest"
+    ports:
+      - "6379:6379"
+
+volumes:
+  postgres_data:
