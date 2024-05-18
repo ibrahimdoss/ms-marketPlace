@@ -20,6 +20,9 @@
         <module>ProductService</module>
         <module>OrderService</module>
         <module>EurekaServer</module>
+        <module>MobilGateway</module>
+        <module>MailService</module>
+        <module>ShipmentService</module>
     </modules>
 
     <build>

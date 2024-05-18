@@ -1,0 +1,30 @@
+kafka init
+
+run sort 1
+
+docker run -d \
+  --name zookeeper \
+  -p 2181:2181 \
+  zookeeper:latest
+
+
+run sort 2
+docker run -d \
+  --name kafka \
+  -p 9092:9099 \
+  --env KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 \
+  --env KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092 \
+  --env KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 \
+  --link zookeeper \
+  confluentinc/cp-kafka:latest
+
+
+/* create topic */
+docker exec -it <container_name_or_id> bash
+
+kafka-topics --create -bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic mailTopic
+
+
+--kafka ui
+
+docker run -it -p 8080:8080 -e DYNAMIC_CONFIG_ENABLED=true provectuslabs/kafka-ui
