@@ -1,0 +1,14 @@
+spring:
+    application:
+        name: MailService
+    kafka:
+        producer:
+            bootstrap-servers: localhost:9092
+            key-serializer: org.apache.kafka.common.serialization.StringSerializer
+            value-serializer: org.apache.kafka.common.serialization.StringSerializer
+        topics:
+            mail: mailTopic
+            mail-fail: mailTopicFail
+
+server:
+    port: 8799
