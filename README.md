@@ -33,3 +33,15 @@ Proje aşağıdaki mikroservislerden oluşmaktadır:
 - **Eureka Server**
 - **API Gateway**
 
+Circuit Breaker success
+![Görsel Açıklaması](https://github.com/ibrahimdoss/ms-marketPlace/blob/7c0fe0aaa62b835f7c387193cc7c7fb5061c8caa/Screenshot%20from%202024-05-18%2021-05-08.png)
+
+Circuit Breaker(Circuit half open status)
+![Görsel Açıklaması](fail-circuit.png)
+
+Saga pattern fail case diagram
+![Görsel Açıklaması](fail-saga.png)
+
+Saga pattern diagram
+![Görsel Açıklaması](saga-.png)
+
